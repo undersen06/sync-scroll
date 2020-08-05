@@ -44,10 +44,10 @@ export class AppComponent implements OnInit {
         }),
       ).subscribe(
         (x: any) => {
-          // for (const column of Array.from(columns)) {
+          for (const column of Array.from(columns)) {
             column.scrollLeft = x.srcElement.scrollLeft;
             column.scrollTop = x.srcElement.scrollTop;
-          // }
+          }
         }
       );
     }
