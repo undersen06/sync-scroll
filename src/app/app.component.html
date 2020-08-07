@@ -307,13 +307,61 @@
 
 </div>
 
-<div class="content" role="main">
+<div class="content" role="main" *ngIf="quadrants?.length > 0">
 
 
-  <div class="flex flex-row flex-wrap" *ngIf="quadrants?.length > 0">
-    <div class="flex flex-column flex-basis-50 " *ngFor="let quadrant of quadrants">
-      <div *ngFor="let data of chunk(quadrant,5)" style="display: inline-flex;">
-        <img *ngFor="let item of data" [src]="item.url">
+  <div class="example-container">
+    <p>Regular </p>
+
+
+    <div class="flex flex-row flex-wrap">
+      <div class="flex flex-column regular flex-basis-50 " *ngFor="let quadrant of quadrants">
+        <div *ngFor="let data of chunk(quadrant,5)" style="display: inline-flex;">
+          <img *ngFor="let item of data" [src]="item.url">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="example-container">
+    <p>Debounce Time</p>
+
+
+    <div class="flex flex-row flex-wrap">
+      <div class="flex flex-column debounce flex-basis-50 " *ngFor="let quadrant of quadrants">
+        <div *ngFor="let data of chunk(quadrant,5)" style="display: inline-flex;">
+          <img *ngFor="let item of data" [src]="item.url">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="example-container">
+    <p>Throttle Time</p>
+
+
+    <div class="flex flex-row flex-wrap">
+      <div class="flex flex-column throttle flex-basis-50 " *ngFor="let quadrant of quadrants">
+        <div *ngFor="let data of chunk(quadrant,5)" style="display: inline-flex;">
+          <img *ngFor="let item of data" [src]="item.url">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="example-container">
+    <p>Delay</p>
+
+
+    <div class="flex flex-row flex-wrap">
+      <div class="flex flex-column delay flex-basis-50 " *ngFor="let quadrant of quadrants">
+        <div *ngFor="let data of chunk(quadrant,5)" style="display: inline-flex;">
+          <img *ngFor="let item of data" [src]="item.url">
+        </div>
       </div>
     </div>
   </div>
